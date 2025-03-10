@@ -24,10 +24,10 @@ const skillSets = [
 // Experience data
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    period: "2021 - Present",
-    description: "Led the development of the company's flagship SaaS product, improving performance by 40% and implementing a new design system."
+    title: "UIUX Design Intern",
+    company: "American Health Care Academy ",
+    period: "Aug 2024 - Feb 2025 ",
+    description: "I designed user-centered interfaces in Figma, enhancing the credit card payment gateway and boosting sales by over 20%, while collaborating with cross-functional teams and utilizing ClickUp for project management."
   },
   {
     title: "Full Stack Developer",
