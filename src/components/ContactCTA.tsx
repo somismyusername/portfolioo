@@ -34,7 +34,7 @@ const ContactCTA = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={sectionRef}
-          className="max-w-3xl mx-auto text-center opacity-0"
+          className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Have a project in mind?

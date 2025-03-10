@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -40,50 +39,10 @@ const projects: Project[] = [
 ];
 
 const FeaturedProjects = () => {
-  const headingRef = useRef<HTMLDivElement>(null);
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
-    }
-
-    projectRefs.current.forEach((project) => {
-      if (project) observer.observe(project);
-    });
-
-    return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
-      }
-      projectRefs.current.forEach((project) => {
-        if (project) observer.unobserve(project);
-      });
-    };
-  }, []);
-
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
-        <div 
-          ref={headingRef} 
-          className="text-center mb-16 opacity-0"
-        >
+        <div className="text-center mb-16 animate-fade-up">
           <h2 className="section-heading">Featured Projects</h2>
           <p className="section-subheading mx-auto">
             A selection of my recent work across web development and design.
@@ -95,8 +54,7 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              ref={(el) => (projectRefs.current[index] = el)}
-              className="project-card opacity-0"
+              className={`project-card animate-fade-up`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               <img 
@@ -132,7 +90,8 @@ const FeaturedProjects = () => {
         <div className="text-center mt-12">
           <Link 
             to="/projects" 
-            className="btn-primary"
+            className="btn-primary animate-fade-up"
+            style={{ animationDelay: '500ms' }}
           >
             View All Projects
           </Link>

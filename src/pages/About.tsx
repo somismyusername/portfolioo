@@ -86,7 +86,7 @@ const About = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={headerRef}
-              className="max-w-3xl mx-auto text-center opacity-0"
+              className="max-w-3xl mx-auto text-center  "
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
                 About Me
@@ -107,7 +107,7 @@ const About = () => {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-xl -z-10"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-xl -z-10"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop" 
+                    src="/image/profileimage.jpg"
                     alt="Professional portrait" 
                     className="w-full h-auto rounded-xl shadow-lg"
                   />
@@ -116,7 +116,7 @@ const About = () => {
               
               <div 
                 ref={bioRef}
-                className="opacity-0"
+                className=" "
               >
                 <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
                   My Journey
@@ -144,7 +144,7 @@ const About = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={skillsRef}
-              className="text-center max-w-3xl mx-auto mb-16 opacity-0"
+              className="text-center max-w-3xl mx-auto mb-16  "
             >
               <h2 className="section-heading">Skills & Expertise</h2>
               <p className="section-subheading mx-auto">
@@ -222,7 +222,7 @@ const About = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={experienceRef}
-              className="text-center max-w-3xl mx-auto mb-16 opacity-0"
+              className="text-center max-w-3xl mx-auto mb-16 x-0"
             >
               <h2 className="section-heading">Professional Experience</h2>
               <p className="section-subheading mx-auto">

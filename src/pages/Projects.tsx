@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -128,7 +127,7 @@ const Projects = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={headerRef}
-              className="max-w-3xl mx-auto text-center opacity-0"
+              className="max-w-3xl mx-auto text-center  "
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
                 My Projects
@@ -163,7 +162,7 @@ const Projects = () => {
             {/* Projects Grid */}
             <div 
               ref={projectsRef}
-              className="opacity-0"
+              className=" "
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {visibleProjects.map((project) => (
@@ -171,21 +170,12 @@ const Projects = () => {
                     key={project.id}
                     className="project-card group"
                   >
-                    <div className="relative overflow-hidden">
+                    <div className="relative">
                       <img 
                         src={project.imageUrl} 
                         alt={project.title} 
                         className="w-full h-60 object-cover"
                       />
-                      <div className="absolute inset-0 bg-primary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Link 
-                          to={project.link} 
-                          className="h-12 px-6 inline-flex items-center justify-center bg-white text-primary rounded-md font-medium"
-                        >
-                          View Details
-                          <ArrowUpRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </div>
                     </div>
                     <div className="p-6">
                       <div className="flex flex-wrap gap-2 mb-3">
@@ -199,7 +189,14 @@ const Projects = () => {
                         ))}
                       </div>
                       <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground">{project.description}</p>
+                      <p className="text-muted-foreground mb-4">{project.description}</p>
+                      <Link 
+                        to={project.link} 
+                        className="inline-flex items-center justify-center h-10 px-4 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
+                      >
+                        View Details
+                        <ArrowUpRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </div>
                   </div>
                 ))}

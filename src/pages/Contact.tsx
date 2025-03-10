@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -44,24 +44,44 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission with timeout
-    setTimeout(() => {
-      toast({
+
+    try {
+      await emailjs.send(
+        'service_9s9veys', // Replace with your EmailJS service ID
+        'template_ljd87pq', // Replace with your EmailJS template ID
+        {
+          from_name: name,
+          from_email: email,
+          subject: subject,
+          message: message,
+        },
+        'SZRQyXGmgbPxIcV-q' // Replace with your EmailJS public key
+      );
+
+      toast({ 
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
+        variant: "success",
+        className: "bg-green-50 border-green-200 text-green-800",
       });
-      
+
       // Reset form
       setName('');
       setEmail('');
       setSubject('');
       setMessage('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -73,7 +93,7 @@ const Contact = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={headerRef}
-              className="max-w-3xl mx-auto text-center opacity-0"
+              className="max-w-3xl mx-auto text-center  "
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
                 Get In Touch
@@ -92,7 +112,7 @@ const Contact = () => {
               {/* Form */}
               <div 
                 ref={formRef}
-                className="opacity-0"
+                className=" "
               >
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-6">
                   Send Me a Message
@@ -176,7 +196,7 @@ const Contact = () => {
               {/* Contact Info */}
               <div 
                 ref={infoRef}
-                className="opacity-0 lg:pl-12"
+                className="  lg:pl-12"
               >
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-6">
                   Contact Information
@@ -195,10 +215,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Email</h3>
                       <a 
-                        href="mailto:hello@example.com" 
+                        href="mailto:somashekharrgb@gmail.com" 
                         className="text-blue-600 hover:text-blue-800 transition-colors"
                       >
-                        hello@example.com
+                        somashekharrgb@gmail.com
                       </a>
                     </div>
                   </div>
@@ -210,10 +230,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Phone</h3>
                       <a 
-                        href="tel:+11234567890" 
+                        href="tel:+918310351616" 
                         className="text-blue-600 hover:text-blue-800 transition-colors"
                       >
-                        +1 (123) 456-7890
+                        +91 83103 51616
                       </a>
                     </div>
                   </div>
@@ -225,7 +245,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Location</h3>
                       <p className="text-muted-foreground">
-                        San Francisco, California
+                        Bangalore, India
                       </p>
                     </div>
                   </div>
@@ -235,7 +255,7 @@ const Contact = () => {
                   <h3 className="font-bold mb-4">Connect With Me</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/somismyusername" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-secondary h-10 w-10 rounded-full flex items-center justify-center hover:bg-secondary/80 transition-colors"
@@ -244,7 +264,7 @@ const Contact = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                     </a>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://linkedin.com/in/somashekhar-g-b-r" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-secondary h-10 w-10 rounded-full flex items-center justify-center hover:bg-secondary/80 transition-colors"
@@ -252,7 +272,7 @@ const Contact = () => {
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a 
+                    {/* <a 
                       href="https://twitter.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -260,7 +280,7 @@ const Contact = () => {
                       aria-label="Twitter"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

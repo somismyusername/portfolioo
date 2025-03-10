@@ -49,7 +49,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/somismyusername" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-secondary h-10 w-10 rounded-full flex items-center justify-center hover:bg-secondary/80 transition-colors"
@@ -58,7 +58,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/in/somashekhar-g-b-r" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-secondary h-10 w-10 rounded-full flex items-center justify-center hover:bg-secondary/80 transition-colors"
@@ -66,7 +66,7 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a 
+              {/* <a 
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -74,7 +74,7 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

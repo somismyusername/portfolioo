@@ -1,67 +1,23 @@
-
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import React from 'react';
+import './Hero.css';
 
 const Hero = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const title = titleRef.current;
-    const subtitle = subtitleRef.current;
-    const cta = ctaRef.current;
-
-    if (title) {
-      title.classList.add('animate-fade-up');
-    }
-    
-    if (subtitle) {
-      setTimeout(() => {
-        subtitle.classList.add('animate-fade-up');
-      }, 200);
-    }
-    
-    if (cta) {
-      setTimeout(() => {
-        cta.classList.add('animate-fade-up');
-      }, 400);
-    }
-  }, []);
-
   return (
-    <section className="pt-32 pb-20 md:pt-48 md:pb-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 
-            ref={titleRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 opacity-0"
-          >
-            Creating digital experiences that <span className="text-blue-600">inspire</span>
-          </h1>
-          <p 
-            ref={subtitleRef}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 opacity-0"
-          >
-            Hi, I'm a passionate developer and designer crafting beautiful, functional websites and applications.
-          </p>
-          <div 
-            ref={ctaRef}
-            className="flex flex-col sm:flex-row justify-center gap-4 opacity-0"
-          >
-            <Link to="/projects" className="btn-primary">
-              View My Work
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link 
-              to="/contact" 
-              className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            >
-              Get In Touch
-            </Link>
-          </div>
-        </div>
+    <section className="hero">
+      <div className="container mx-auto px-4 md:px-6 text-left">
+        <p className="greeting text-xl md:text-2xl mb-4">
+          <span className="typewriter">Hi, I'm Somashekhar! 👋</span>
+        </p>
+
+        <h1 className="hero-title text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-relaxed lg:leading-loose">
+          A <span className="highlight">Generalist</span>{' '}
+          <span className="secondary">by trade,</span>{' '}
+          <span className="highlight">problem-solver</span>{' '}
+          <span className="secondary">by nature:</span>{' '}<br />
+          <span className="highlight">Crafting</span>,{' '}
+          <span className="secondary">experiences that make a</span>{' '}
+          <span className="highlight">difference</span>
+        </h1>
       </div>
     </section>
   );

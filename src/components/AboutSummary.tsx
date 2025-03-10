@@ -1,49 +1,18 @@
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import profileimage from '/Users/macbookpro/Desktop/port/Portfolio2/portfolio-cursor/image/profileimage.jpg';
 
 const AboutSummary = () => {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    if (contentRef.current) observer.observe(contentRef.current);
-    if (imageRef.current) observer.observe(imageRef.current);
-
-    return () => {
-      if (contentRef.current) observer.unobserve(contentRef.current);
-      if (imageRef.current) observer.unobserve(imageRef.current);
-    };
-  }, []);
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div 
-            ref={contentRef} 
-            className="opacity-0"
-          >
+          <div className="[animation-fill-mode:both] animate-fade-up">
             <h2 className="section-heading">About Me</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I'm a passionate full-stack developer with a focus on creating beautiful, 
-              functional user experiences. With over 5 years of experience in web development,
+              I'm a passionate Visual Designer with a focus on creating beautiful, 
+              functional user experiences. With over 2 years of experience in web design,
               I combine technical expertise with creative problem-solving.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
@@ -60,15 +29,12 @@ const AboutSummary = () => {
             </Link>
           </div>
           
-          <div 
-            ref={imageRef}
-            className="opacity-0"
-          >
+          <div className="[animation-fill-mode:both] animate-fade-up delay-100">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-xl -z-10"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-xl -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop" 
+                src={profileimage}
                 alt="Professional portrait" 
                 className="w-full h-auto rounded-xl shadow-lg"
               />

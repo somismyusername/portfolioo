@@ -26,7 +26,7 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
+    // { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' },
@@ -41,8 +41,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-display font-bold">
-            Portfolio<span className="text-blue-600">.</span>
+          <Link to="/" className="text-xl text-blue-600 font-display font-bold">
+            Som<span className="text-blue-600">.</span>
           </Link>
 
           {/* Desktop Navigation */}

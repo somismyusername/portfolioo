@@ -65,8 +65,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Manrope', 'sans-serif'],
+				sans: ['Sora', 'sans-serif'],
+				display: ['Sora', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -118,3 +118,5 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+
