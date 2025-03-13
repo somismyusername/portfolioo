@@ -19,7 +19,7 @@ const allProjects: Project[] = [
     id: 1,
     title: "E-Commerce Dashboard",
     description: "A modern dashboard for online stores with analytics and inventory management.",
-    tags: ["React", "Tailwind CSS", "Node.js"],
+    tags: ["User Interface (UI)", "Information Architecture", "Grid System"],
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
     link: "/projects/ecommerce-dashboard",
   },
@@ -27,7 +27,7 @@ const allProjects: Project[] = [
     id: 2,
     title: "Travel Booking App",
     description: "A seamless booking experience for travelers with real-time availability.",
-    tags: ["React Native", "Firebase", "UI/UX Design"],
+    tags: ["User Experience (UX)", "Prototype", "Interaction Design"],
     imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2421&auto=format&fit=crop",
     link: "/projects/travel-booking",
   },
@@ -35,7 +35,7 @@ const allProjects: Project[] = [
     id: 3,
     title: "Health & Fitness Tracker",
     description: "Personal wellness tracking with data visualization and goal setting.",
-    tags: ["TypeScript", "D3.js", "MongoDB"],
+    tags: ["Visual Hierarchy", "Usability", "Feedback Loop"],
     imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2370&auto=format&fit=crop",
     link: "/projects/fitness-tracker",
   },
@@ -43,7 +43,7 @@ const allProjects: Project[] = [
     id: 4,
     title: "Social Media Platform",
     description: "A niche social platform for connecting like-minded professionals.",
-    tags: ["React", "Redux", "Node.js", "Socket.io"],
+    tags: ["Journey Mapping", "Persona", "User Research"],
     imageUrl: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2374&auto=format&fit=crop",
     link: "/projects/social-platform",
   },
@@ -51,7 +51,7 @@ const allProjects: Project[] = [
     id: 5,
     title: "Portfolio Website",
     description: "A responsive portfolio website with smooth animations and modern design.",
-    tags: ["HTML", "CSS", "JavaScript", "Animation"],
+    tags: ["Typography", "Color Theory", "Responsive Design"],
     imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2455&auto=format&fit=crop",
     link: "/projects/portfolio",
   },
@@ -59,7 +59,7 @@ const allProjects: Project[] = [
     id: 6,
     title: "Learning Management System",
     description: "Educational platform for course creation, student enrollment, and progress tracking.",
-    tags: ["React", "Express", "MongoDB", "AWS"],
+    tags: ["Accessibility", "Brand Consistency", "Call to Action (CTA)"],
     imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2440&auto=format&fit=crop",
     link: "/projects/lms",
   },
@@ -162,45 +162,58 @@ const Projects = () => {
             {/* Projects Grid */}
             <div 
               ref={projectsRef}
-              className=" "
+              className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto p-4"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {visibleProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="project-card group"
-                  >
-                    <div className="relative">
-                      <img 
-                        src={project.imageUrl} 
-                        alt={project.title} 
-                        className="w-full h-60 object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {project.tags.map((tag, i) => (
-                          <span 
-                            key={i} 
-                            className="text-xs font-medium py-1 px-2 bg-secondary rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground mb-4">{project.description}</p>
-                      <Link 
-                        to={project.link} 
-                        className="inline-flex items-center justify-center h-10 px-4 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
-                      >
-                        View Details
-                        <ArrowUpRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </div>
+              {visibleProjects.slice(0, 5).map((project) => (
+                <div
+                  key={project.id}
+                  className="relative"
+                >
+                  {/* Title and Description Section */}
+                  <div className="mb-4">
+                    <h3 className="text-3xl font-bold mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-lg">
+                      {project.description}
+                    </p>
                   </div>
-                ))}
-              </div>
+
+                  {/* Image Container */}
+                  <div className="relative bg-secondary/5 rounded-2xl p-4 min-h-[400px]">
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      className="rounded-xl w-full h-full object-cover shadow-lg"
+                    />
+                    
+                    {/* Floating CTA Button */}
+                    <Link 
+                      to={project.link} 
+                      className="absolute bottom-8 left-8 inline-flex items-center justify-center px-6 py-3 bg-background border border-border rounded-full text-foreground hover:bg-secondary transition-colors"
+                    >
+                      View project
+                    </Link>
+
+                    {/* Version Number */}
+                    <span className="absolute top-8 right-8 bg-background/80 backdrop-blur-sm text-sm px-3 py-1 rounded-full">
+                      1.00
+                    </span>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tags.slice(0, 3).map((tag, i) => (
+                      <span 
+                        key={i} 
+                        className="text-sm text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -92,7 +92,7 @@ const About = () => {
                 About Me
               </h1>
               <p className="text-xl text-muted-foreground">
-                Developer, designer, and problem solver passionate about creating exceptional digital experiences.
+             Versatile UIUX Designer crafting intuitive digital experiences and driving user engagement.
               </p>
             </div>
           </div>
@@ -122,18 +122,24 @@ const About = () => {
                   My Journey
                 </h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  I'm a passionate developer and designer with over 5 years of experience creating 
-                  digital solutions that combine aesthetics with functionality.
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">
-                  My journey started with a fascination for both design and technology, which led me 
-                  to pursue a career that bridges these two worlds. I believe that the best digital 
-                  products are those that not only look beautiful but also solve real problems.
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  When I'm not coding or designing, you can find me exploring hiking trails, 
-                  experimenting with photography, or diving into a good book on design thinking.
-                </p>
+  I'm a passionate UI/UX Designer & Developer with expertise in user-centered design, coding, and AI-driven solutions. I create intuitive digital experiences through web development, user research, and project management.
+</p>
+
+<p className="text-lg text-muted-foreground mb-4">
+  My fascination with design and technology drives me to bridge these worlds, crafting engaging user experiences. I excel in designing interfaces in Figma and collaborating with teams to solve complex challenges.
+</p>
+
+<p className="text-lg text-muted-foreground mb-4">
+  I've worked in diverse environments, leading marketing campaigns, managing social media, and developing a user-friendly iOS soil testing app, all while ensuring brand consistency and accessibility.
+</p>
+
+<p className="text-lg text-muted-foreground">
+  Outside of work, I enjoy playing football, photography, and video making, which refresh and inspire my creativity.
+</p>
+
+<p className="text-lg text-muted-foreground">
+  I'm eager to connect and explore opportunities to innovate and create impactful digital experiences. Let's collaborate to bring your vision to life!
+</p>
               </div>
             </div>
           </div>
