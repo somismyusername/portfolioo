@@ -11,8 +11,8 @@ const AboutSummary = () => {
           <div className="[animation-fill-mode:both] animate-fade-up">
             <h2 className="section-heading">About Me</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I'm a passionate Visual Designer with a focus on creating beautiful, 
-              functional user experiences. With over 2 years of experience in web design,
+              I'm a passionate UIUX Designer with a focus on creating beautiful, 
+              functional Visual Interfaces with over 2 years of experience in web design,
               I combine technical expertise with creative problem-solving.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
