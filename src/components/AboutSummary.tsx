@@ -34,9 +34,9 @@ const AboutSummary = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-xl -z-10"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-xl -z-10"></div>
               <img 
-                src={profileimage}
-                alt="Professional portrait" 
-                className="w-full h-auto rounded-xl shadow-lg"
+                src="/profileimage.jpg"
+                alt="Profile" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

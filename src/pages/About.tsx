@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -107,7 +106,7 @@ const About = () => {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-xl -z-10"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-xl -z-10"></div>
                   <img 
-                    src="/image/profileimage.jpg"
+                    src="/profileimage.jpg"
                     alt="Professional portrait" 
                     className="w-full h-auto rounded-xl shadow-lg"
                   />
@@ -121,7 +120,7 @@ const About = () => {
                 <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
                   My Journey
                 </h2>
-                <p className="text-lg text-muted-foreground mb-4">
+           <p className="text-lg text-muted-foreground mb-4">
   I'm a passionate UI/UX Designer & Developer with expertise in user-centered design, coding, and AI-driven solutions. I create intuitive digital experiences through web development, user research, and project management.
 </p>
 
