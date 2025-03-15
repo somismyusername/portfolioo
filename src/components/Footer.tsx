@@ -12,10 +12,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <Link to="/" className="text-xl font-display font-bold mb-4 inline-block">
-              Portfolio<span className="text-blue-600">.</span>
+              Som<span className="text-blue-600">.</span>
             </Link>
             <p className="text-muted-foreground">
-              Creating beautiful digital experiences that leave a lasting impression.
+            Thank you for visiting my portfolio. Let's connect <br /> and explore opportunities to create impactful <br />digital experiences together.
             </p>
           </div>
           

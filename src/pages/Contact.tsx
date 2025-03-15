@@ -93,13 +93,13 @@ const Contact = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div 
               ref={headerRef}
-              className="max-w-3xl mx-auto text-center  "
+              className="max-w-3xl mx-auto text-center"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-                Get In Touch
+                Get In Touch 📝
               </h1>
               <p className="text-xl text-muted-foreground">
-                Have a project in mind or just want to say hello? I'd love to hear from you.
+                Have a project in mind or just want to say hello?  I'd love to hear from you.
               </p>
             </div>
           </div>
@@ -245,7 +245,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium mb-1">Location</h3>
                       <p className="text-muted-foreground">
-                        Bangalore, India
+                        Mysore, Karnataka, India
                       </p>
                     </div>
                   </div>
