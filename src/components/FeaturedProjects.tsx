@@ -31,7 +31,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: "Graphic Designs",
-    description: "Personal wellness tracking with data visualization and goal setting.",
+    description: "Worked as Freelancer",
     tags: ["Illustration", "Adobe Illustrator", "Logo"],
     imageUrl: "https://images.unsplash.com/vector-1742116569534-f546d3c0c594?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D",
     link: "/projects/fitness-tracker",
